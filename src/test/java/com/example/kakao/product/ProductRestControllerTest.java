@@ -1,6 +1,7 @@
 package com.example.kakao.product;
 
 import com.example.kakao.MyRestDoc;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.autoconfigure.restdocs.AutoConfigureRestDocs;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -21,6 +22,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class ProductRestControllerTest extends MyRestDoc {
 
     @Test
+    @DisplayName("전체 상품 조회")
     public void findAll_test() throws Exception {
         // given teardown.sql
 
@@ -44,6 +46,7 @@ public class ProductRestControllerTest extends MyRestDoc {
     }
 
     @Test
+    @DisplayName("특정 상품 조회")
     public void findById_test() throws Exception {
         // given teardown.sql
         int id = 1;
@@ -64,6 +67,27 @@ public class ProductRestControllerTest extends MyRestDoc {
         resultActions.andExpect(jsonPath("$.response.description").value(""));
         resultActions.andExpect(jsonPath("$.response.image").value("/images/1.jpg"));
         resultActions.andExpect(jsonPath("$.response.price").value(1000));
+        resultActions.andDo(MockMvcResultHandlers.print()).andDo(document);
+    }
+
+    @Test
+    @DisplayName("존재하지 않는 상품을 조회했을 경우")
+    public void findById_fail_test() throws Exception {
+        // given teardown.sql
+        int id = 500;
+
+        // when
+        ResultActions resultActions = mvc.perform(
+                get("/products/" + id)
+        );
+
+        // console
+        String responseBody = resultActions.andReturn().getResponse().getContentAsString();
+        System.out.println("테스트 : "+responseBody);
+
+        // verify
+        resultActions.andExpect(jsonPath("$.success").value("false"));
+        resultActions.andExpect(jsonPath("$.error.message").value("해당 상품을 찾을 수 없습니다 : " + id));
         resultActions.andDo(MockMvcResultHandlers.print()).andDo(document);
     }
 }
