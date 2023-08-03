@@ -48,41 +48,41 @@ public class OrderRestControllerTest extends MyRestDoc {
         resultActions.andExpect(jsonPath("$.success").value("true"));
         resultActions.andExpect(jsonPath("$.response.id").value(2));
 
-        resultActions.andExpect(jsonPath("$.response.products[0].productName").value("바른 누룽지맛 발효효소 2박스 역가수치보장 / 외 7종"));
-        resultActions.andExpect(jsonPath("$.response.products[0].items[0].id").value(6));
-        resultActions.andExpect(jsonPath("$.response.products[0].items[0].optionName").value("선택02_바른곡물효소누룽지맛 6박스"));
-        resultActions.andExpect(jsonPath("$.response.products[0].items[0].quantity").value(5));
-        resultActions.andExpect(jsonPath("$.response.products[0].items[0].price").value(250000));
-
-        resultActions.andExpect(jsonPath("$.response.products[1].productName").value("기본에 슬라이딩 지퍼백 크리스마스/플라워에디션 에디션 외 주방용품 특가전"));
-        resultActions.andExpect(jsonPath("$.response.products[1].items[0].id").value(4));
-        resultActions.andExpect(jsonPath("$.response.products[1].items[0].optionName").value("01. 슬라이딩 지퍼백 크리스마스에디션 4종"));
-        resultActions.andExpect(jsonPath("$.response.products[1].items[0].quantity").value(5));
-        resultActions.andExpect(jsonPath("$.response.products[1].items[0].price").value(50000));
-        resultActions.andExpect(jsonPath("$.response.products[1].items[1].id").value(5));
-        resultActions.andExpect(jsonPath("$.response.products[1].items[1].optionName").value("02. 슬라이딩 지퍼백 플라워에디션 5종"));
-        resultActions.andExpect(jsonPath("$.response.products[1].items[1].quantity").value(1));
-        resultActions.andExpect(jsonPath("$.response.products[1].items[1].price").value(10900));
-
-        resultActions.andExpect(jsonPath("$.response.totalPrice").value(310900));
-
-
-//        resultActions.andExpect(jsonPath("$.response.products[0].productName").value("기본에 슬라이딩 지퍼백 크리스마스/플라워에디션 에디션 외 주방용품 특가전"));
-//        resultActions.andExpect(jsonPath("$.response.products[0].items[0].id").value(4));
-//        resultActions.andExpect(jsonPath("$.response.products[0].items[0].optionName").value("01. 슬라이딩 지퍼백 크리스마스에디션 4종"));
+//        resultActions.andExpect(jsonPath("$.response.products[0].productName").value("바른 누룽지맛 발효효소 2박스 역가수치보장 / 외 7종"));
+//        resultActions.andExpect(jsonPath("$.response.products[0].items[0].id").value(6));
+//        resultActions.andExpect(jsonPath("$.response.products[0].items[0].optionName").value("선택02_바른곡물효소누룽지맛 6박스"));
 //        resultActions.andExpect(jsonPath("$.response.products[0].items[0].quantity").value(5));
-//        resultActions.andExpect(jsonPath("$.response.products[0].items[0].price").value(50000));
-//        resultActions.andExpect(jsonPath("$.response.products[0].items[1].id").value(5));
-//        resultActions.andExpect(jsonPath("$.response.products[0].items[1].optionName").value("02. 슬라이딩 지퍼백 플라워에디션 5종"));
-//        resultActions.andExpect(jsonPath("$.response.products[0].items[1].quantity").value(1));
-//        resultActions.andExpect(jsonPath("$.response.products[0].items[1].price").value(10900));
+//        resultActions.andExpect(jsonPath("$.response.products[0].items[0].price").value(250000));
 //
-//        resultActions.andExpect(jsonPath("$.response.products[1].productName").value("바른 누룽지맛 발효효소 2박스 역가수치보장 / 외 7종"));
-//        resultActions.andExpect(jsonPath("$.response.products[1].items[0].id").value(6));
-//        resultActions.andExpect(jsonPath("$.response.products[1].items[0].optionName").value("선택02_바른곡물효소누룽지맛 6박스"));
+//        resultActions.andExpect(jsonPath("$.response.products[1].productName").value("기본에 슬라이딩 지퍼백 크리스마스/플라워에디션 에디션 외 주방용품 특가전"));
+//        resultActions.andExpect(jsonPath("$.response.products[1].items[0].id").value(4));
+//        resultActions.andExpect(jsonPath("$.response.products[1].items[0].optionName").value("01. 슬라이딩 지퍼백 크리스마스에디션 4종"));
 //        resultActions.andExpect(jsonPath("$.response.products[1].items[0].quantity").value(5));
-//        resultActions.andExpect(jsonPath("$.response.products[1].items[0].price").value(250000));
+//        resultActions.andExpect(jsonPath("$.response.products[1].items[0].price").value(50000));
+//        resultActions.andExpect(jsonPath("$.response.products[1].items[1].id").value(5));
+//        resultActions.andExpect(jsonPath("$.response.products[1].items[1].optionName").value("02. 슬라이딩 지퍼백 플라워에디션 5종"));
+//        resultActions.andExpect(jsonPath("$.response.products[1].items[1].quantity").value(1));
+//        resultActions.andExpect(jsonPath("$.response.products[1].items[1].price").value(10900));
+//
 //        resultActions.andExpect(jsonPath("$.response.totalPrice").value(310900));
+
+
+        resultActions.andExpect(jsonPath("$.response.products[0].productName").value("기본에 슬라이딩 지퍼백 크리스마스/플라워에디션 에디션 외 주방용품 특가전"));
+        resultActions.andExpect(jsonPath("$.response.products[0].items[0].id").value(4));
+        resultActions.andExpect(jsonPath("$.response.products[0].items[0].optionName").value("01. 슬라이딩 지퍼백 크리스마스에디션 4종"));
+        resultActions.andExpect(jsonPath("$.response.products[0].items[0].quantity").value(5));
+        resultActions.andExpect(jsonPath("$.response.products[0].items[0].price").value(50000));
+        resultActions.andExpect(jsonPath("$.response.products[0].items[1].id").value(5));
+        resultActions.andExpect(jsonPath("$.response.products[0].items[1].optionName").value("02. 슬라이딩 지퍼백 플라워에디션 5종"));
+        resultActions.andExpect(jsonPath("$.response.products[0].items[1].quantity").value(1));
+        resultActions.andExpect(jsonPath("$.response.products[0].items[1].price").value(10900));
+
+        resultActions.andExpect(jsonPath("$.response.products[1].productName").value("바른 누룽지맛 발효효소 2박스 역가수치보장 / 외 7종"));
+        resultActions.andExpect(jsonPath("$.response.products[1].items[0].id").value(6));
+        resultActions.andExpect(jsonPath("$.response.products[1].items[0].optionName").value("선택02_바른곡물효소누룽지맛 6박스"));
+        resultActions.andExpect(jsonPath("$.response.products[1].items[0].quantity").value(5));
+        resultActions.andExpect(jsonPath("$.response.products[1].items[0].price").value(250000));
+        resultActions.andExpect(jsonPath("$.response.totalPrice").value(310900));
 
         resultActions.andDo(MockMvcResultHandlers.print()).andDo(document);
     }
